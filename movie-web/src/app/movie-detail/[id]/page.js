@@ -66,17 +66,17 @@ export default function MovieDetail() {
   return (
     <div>
       <Header />
-      <div className="w-full  mt-5 flex justify-center max-sm:mt-2">
-        <div className="w-330 flex justify-between h-18 max-sm:w-[430px] max-sm:h-23 max-sm:gap-3">
-          <div className="w-340  h-[72px] flex flex-col justify-around max-sm:w-300">
+      <div className="w-full mt-5  flex justify-center max-sm:mt-2">
+        <div className="w-360 flex justify-between h-18 max-sm:w-[430px] max-sm:h-23 ">
+          <div className="w-340  h-[72px] flex flex-col justify-around ">
             <div className="font-bold text-4xl max-sm:text-xl max-sm:font-base">
               {movie?.title}
             </div>
             <div>
-              {movie?.release_date} - PG - {movie?.runtime} minutes
+              {movie?.release_date} - PG - {movie?.runtime} min
             </div>
           </div>
-          <div className="mr-40">
+          <div className="mr-10">
             <p>Rating</p>
             <div className="flex flex-row gap-2">
               <StarIcon />
@@ -86,10 +86,10 @@ export default function MovieDetail() {
         </div>
       </div>
       <div className="w-full mt-5 flex justify-center">
-        <div className="w-340 h-[428px]  flex  justify-around sm: ">
-          <div className="w-[450px] h-[428px] border rounded-lg max-sm:hidden">
+        <div className="w-340 h-[428px]  flex  justify-around max-sm:flex-col max-sm:h-[211px]">
+          <div className="w-[450px] h-[428px] border rounded-lg max-sm:w-[100px] max-sm:h-[148px] sm:flex hidden">
             <img
-              className="w-full h-full  rounded-lg"
+              className="w-full h-full  rounded-lg "
               src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
             />
           </div>
@@ -113,28 +113,36 @@ export default function MovieDetail() {
           {trailer && <Trailer2 movieId={id} />}
         </div>
       </div>
-      <div className="w-full flex justify-center mt-5">
-        <div className="flex flex-row gap-3 w-335 h-[20px] items-center ml-10 max-sm:flex-wrap max-sm:w-[200px] max-sm:h-[84px]">
-          <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
-            Fairy Tale
-          </button>
-          <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
-            Pop Musical
-          </button>
-          <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
-            Fantasy
-          </button>
-          <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
-            Musical
-          </button>
-          <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
-            Romance
-          </button>
+      <div className="w-full flex justify-center mt-5 max-sm:w-[375px] max-sm:h-[230px]">
+        <div className="w-[450px] h-[428px] border rounded-lg max-sm:w-[100px] max-sm:h-[148px] sm:hidden ">
+          <img
+            className="w-full h-full  rounded-lg "
+            src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
+          />
         </div>
-      </div>
-      <div className=" flex justify-center mt-5 w-full">
-        <div className="w-335 h-[48px] items-center ml-10 max-sm:w-[200px] ">
-          {movie?.overview}
+        <div className="sm:flex-col">
+          <div className="flex flex-row gap-3 w-335 h-[20px] items-center ml-10 max-sm:flex-wrap max-sm:w-[200px] max-sm:h-[84px]">
+            <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
+              Fairy Tale
+            </button>
+            <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
+              Pop Musical
+            </button>
+            <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
+              Fantasy
+            </button>
+            <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
+              Musical
+            </button>
+            <button className="w-20 h-5 text-black font-semibold text-xs border border-gray-300 items-center rounded-lg ">
+              Romance
+            </button>
+          </div>
+          <div className=" flex justify-center mt-3 w-full ">
+            <div className="w-335 h-[48px] items-center ml-10 max-sm:w-[230px] ">
+              {movie?.overview}
+            </div>
+          </div>
         </div>
       </div>
       {actors && (

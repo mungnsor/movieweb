@@ -44,32 +44,34 @@ export const UpcomingMovieList = (props) => {
     return <div>Something wrong</div>;
   }
   return (
-    <div className="w-full flex justify-center mt-5 ">
-      <div className="w-full flex text-black flex-col ">
-        <div className="w-full flex justify-between">
-          <div className="w-60 ml-2 text-2xl font-semibold ">Upcoming</div>
-          <Link href={"/upcoming"}>
-            <button className="w-50 justify-end flex  items-center gap-1">
-              See more
-              <span className="flex items-center ">
-                <RightIcon />
-              </span>
-            </button>
-          </Link>
-        </div>
-        <div className="grid grid-cols-5 w-full mt-2 justify-around gap-3 max-sm:grid-cols-2  items-center">
-          {UpcomingMovies.slice(0, count).map((movie, index) => {
-            return (
-              <MovieCard
-                key={index}
-                title={movie.title}
-                image={movie.backdrop_path}
-                vote={movie.vote_average}
-                movieId={movie.id}
-                imgSrc={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-              />
-            );
-          })}
+    <div className="sm:w-[1440px] m-auto">
+      <div className="w-full flex justify-center mt-5 ">
+        <div className="w-full flex text-black flex-col ">
+          <div className="w-full flex justify-between">
+            <div className="w-60 ml-2 text-2xl font-semibold ">Upcoming</div>
+            <Link href={"/upcoming"}>
+              <button className="w-50 justify-end flex  items-center gap-1">
+                See more
+                <span className="flex items-center ">
+                  <RightIcon />
+                </span>
+              </button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-5 w-full mt-2 justify-around gap-3 max-sm:grid-cols-2  items-center">
+            {UpcomingMovies.slice(0, count).map((movie, index) => {
+              return (
+                <MovieCard
+                  key={index}
+                  title={movie.title}
+                  image={movie.backdrop_path}
+                  vote={movie.vote_average}
+                  movieId={movie.id}
+                  imgSrc={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

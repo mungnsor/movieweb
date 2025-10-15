@@ -36,14 +36,14 @@ export const GenreList2 = () => {
     return <div>Something wrong</div>;
   }
   return (
-    <div className="w-[387px] h-[352px] text-black rounded-lg border-none p-8 flex gap-5 flex-col">
+    <div className="w-[387px] h-[352px] text-black rounded-lg border-none p-8 flex gap-5 flex-col max-sm:w-[375px] max-sm:h-[384px]">
       <div className="flex flex-col ml-3 w-54 h-15 gap-1">
         <p className="font-semibold tetx-2xl">Search by genre</p>{" "}
         <p className="font-base text-base w-55 h-15">
           See lists of movies by genre{" "}
         </p>{" "}
       </div>{" "}
-      <div className="flex flex-wrap gap-3 w-[387px] h-[272px]">
+      <div className="flex flex-wrap gap-3 w-[387px] h-[272px] max-sm:w-[335px] max-sm:h-[308px]">
         {genres.map((genre, index) => {
           return <Genres key={index} name={genre.name} genre={genre.id} />;
         })}

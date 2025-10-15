@@ -61,20 +61,20 @@ export default function MovieClick() {
     <>
       <Header />
       <div>
-        <div className="w-146 text-[30px] flex justify-center h-30 items-center">
+        <div className=" text-[30px] flex justify-center h-30 items-center max-sm:items-start max-sm:justify-start max-sm:h-15 max-sm:ml-5">
           Search filter
         </div>
-        <div className="w-[1440px] flex justify-between m-auto">
-          <div className="w-130 ">
+        <div className="w-[1440px] flex justify-between m-auto max-sm:flex-col max-sm:w-[430px]">
+          <div className="w-130 max-sm:w-100">
             <GenreList3 />
           </div>
 
-          <div className="border-l-1 w-300">
-            <div className="w-70 flex justify-center mt-3">
+          <div className="border-l-1 w-300 max-sm:w-[430px]">
+            <div className="w-70 flex justify-center mt-3 max-sm:items-start max-sm:justify-start max-sm:ml-5">
               {MovieClick.length} titles in "{GenreClick[0]?.name}"
             </div>
-            <div className="flex flex-wrap w-230 mt-4 gap-4 justify-center items-center">
-              {MovieClick.slice(0, 6).map((movie, index) => {
+            <div className="grid grid-cols-5 w-full mt-2 justify-around px-3 gap-3 max-sm:grid-cols-2  items-center max-sm:w-[430px]">
+              {MovieClick.slice(0, 5).map((movie, index) => {
                 return (
                   <MovieCard
                     key={index}
@@ -90,8 +90,8 @@ export default function MovieClick() {
         </div>
       </div>
       <div className="w-full flex justify-center mt-5 mb-5 ">
-        <div className="w-340 flex flex-row justify-between ">
-          <div className="w-340 flex-row flex items-center gap-2 justify-end">
+        <div className="w-full flex flex-row justify-between ">
+          <div className="w-full flex-row flex items-center gap-2 justify-end">
             <BackButtonIcon />{" "}
             <span className="text-gray-300" onClick={handleBackButton}>
               Previous{" "}
@@ -113,7 +113,7 @@ export default function MovieClick() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer />{" "}
     </>
   );
 }

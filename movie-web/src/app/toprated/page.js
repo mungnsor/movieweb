@@ -60,51 +60,53 @@ export default function Home() {
     return <div>Something wrong</div>;
   }
   return (
-    <div className="sm:w-[1440px] m-auto">
+    <div>
       <Header />
-      <div className="w-full flex justify-center mt-5">
-        <div className="w-full flex text-black flex-col">
-          <div className="w-full flex justify-between">
-            <div className="w-60 ml-2 text-2xl font-semibold">Top Rated</div>
-          </div>
-          <div className="grid grid-cols-5 w-full mt-2 justify-around px-3 gap-3 max-sm:grid-cols-2  items-center">
-            {TopRated.slice(0, 20).map((movie, index) => {
-              return (
-                <MovieCard
-                  key={index}
-                  title={movie.title}
-                  image={movie.backdrop_path}
-                  vote={movie.vote_average}
-                  movieId={movie.id}
-                  imgSrc={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                />
-              );
-            })}
+      <div className="sm:w-[1440px] m-auto">
+        <div className="w-full flex justify-center mt-5">
+          <div className="w-full flex text-black flex-col">
+            <div className="w-full flex justify-between">
+              <div className="w-60 ml-2 text-2xl font-semibold">Top Rated</div>
+            </div>
+            <div className="grid grid-cols-5 w-full mt-2 justify-around px-3 gap-3 max-sm:grid-cols-2  items-center">
+              {TopRated.slice(0, 20).map((movie, index) => {
+                return (
+                  <MovieCard
+                    key={index}
+                    title={movie.title}
+                    image={movie.backdrop_path}
+                    vote={movie.vote_average}
+                    movieId={movie.id}
+                    imgSrc={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="w-full flex justify-center mt-5 mb-5 ">
-        <div className="w-full flex flex-row justify-between ">
-          <div></div>
-          <div className="w-full flex-row flex items-center gap-2 justify-end">
-            <BackButtonIcon />{" "}
-            <span className="text-gray-300" onClick={handleBackButton}>
-              Previous{" "}
-            </span>
-            {page > 1 && <button className="w-9 h-9 ">{page - 1} </button>}
-            <button className="w-9 h-9  border border-gray-300 rounded-lg">
-              {page}
-            </button>
-            <button className="w-9 h-9 ">{page + 1}</button>
-            <button className="w-9 h-9 ">...</button>
-            <button className="w-9 h-9  ">10</button>
-            <p
-              className="text-black items-center flex gap-2"
-              onClick={handleNextButton}
-            >
-              {" "}
-              Next <NextButtonIcon />
-            </p>
+        <div className="w-full flex justify-center mt-5 mb-5 ">
+          <div className="w-full flex flex-row justify-between ">
+            <div></div>
+            <div className="w-full flex-row flex items-center gap-2 justify-end">
+              <BackButtonIcon />{" "}
+              <span className="text-gray-300" onClick={handleBackButton}>
+                Previous{" "}
+              </span>
+              {page > 1 && <button className="w-9 h-9 ">{page - 1} </button>}
+              <button className="w-9 h-9  border border-gray-300 rounded-lg">
+                {page}
+              </button>
+              <button className="w-9 h-9 ">{page + 1}</button>
+              <button className="w-9 h-9 ">...</button>
+              <button className="w-9 h-9  ">10</button>
+              <p
+                className="text-black items-center flex gap-2"
+                onClick={handleNextButton}
+              >
+                {" "}
+                Next <NextButtonIcon />
+              </p>
+            </div>
           </div>
         </div>
       </div>

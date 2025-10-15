@@ -49,25 +49,25 @@ export default function SearchALL() {
     <>
       <Header />
       <div>
-        <div className="w-146 text-[30px] flex h-30 items-center justify-center ml-50">
+        <div className=" text-[30px] flex h-30 items-center justify-center ml-50 max-sm:items-start max-sm:justify-start max-sm:h-15 max-sm:ml-5">
           Search results
         </div>
-        <div className="w-[1140px] flex justify-between m-auto">
-          <div className="border-r-1 w-300">
-            <div className="w-180  flex justify-center mt-3">
+        <div className="w-[1140px] flex justify-between m-auto max-sm:flex-col max-sm:w-[430px]">
+          <div className=" border-r-1 w-300 max-sm:w-[430px]">
+            <div className=" flex justify-center mt-3 max-sm:items-start max-sm:justify-start max-sm:ml-5">
               {MoviesData.length == 0 && (
-                <div className="w-[970px] h-[95px] border border-gray-300 flex items-center justify-center">
+                <div className="w-[970px] h-[95px] border border-gray-300 flex items-center justify-center max-sm:w-[430px]">
                   not results found{" "}
                 </div>
               )}
             </div>
             {MoviesData.length > 0 && (
               <div>
-                <div>
-                  {MoviesData.length} results for "{value}"{" "}
+                <div className="max-sm:items-start max-sm:justify-start max-sm:ml-5">
+                  {MoviesData.length} results for "{value}"
                 </div>
-                <div className="flex flex-wrap w-230 mt-4 gap-3 justify-center items-center">
-                  {MoviesData.slice(0, 6).map((movie, index) => {
+                <div className="grid grid-cols-5 w-full mt-2 justify-around px-3 gap-3 max-sm:grid-cols-2   items-center  max-sm:w-[430px]">
+                  {MoviesData.slice(0, 8).map((movie, index) => {
                     return (
                       <MovieCard
                         key={index}
@@ -82,14 +82,14 @@ export default function SearchALL() {
               </div>
             )}
           </div>
-          <div className="w-80">
+          <div className="w-80 max-sm:60">
             <GenreList2 />
           </div>
         </div>
       </div>
       <div className="w-full flex justify-center mt-5 mb-5 ">
-        <div className="w-340 flex flex-row justify-between ">
-          <div className="w-340 flex-row flex items-center gap-2 justify-center ">
+        <div className="w-full flex flex-row justify-between ">
+          <div className="w-full flex-row flex items-center gap-2 justify-center ">
             <BackButtonIcon />{" "}
             <span className="text-gray-300" onClick={handleBackButton}>
               Previous{" "}

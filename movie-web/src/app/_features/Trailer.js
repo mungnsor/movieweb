@@ -39,8 +39,8 @@ export const Trailer = ({ movieId }) => {
     );
   }
   return (
-    <div className="flex w-[1100px]  h-[450px] items-center gap-2  cursor-pointer border justify-center  z-10 border-none absolute max-sm:w-[450px]  sm:justify-items-start ">
-      <div className="w-[1080px] h-full bg-gray flex ml-100 max-sm:w-[450px]">
+    <div className="flex   h-[450px] items-center gap-2  cursor-pointer border justify-center  z-10 border-none absolute max-sm:w-[450px]  max-sm:justify-items-start max-sm:bg-black max-sm:h-[550px]">
+      <div className="w-[1080px] h-full bg-gray flex ml-80  max-sm:w-[450px] max-sm:ml-0 max-sm:justify-center max-sm:items-center">
         <iframe
           width="1100"
           height="458"
@@ -50,6 +50,12 @@ export const Trailer = ({ movieId }) => {
           allowFullScreen
         ></iframe>
       </div>
+      <button
+        className="w-9 h-9 rounded-full bg-white  flex justify-start items-start  cursor-pointer text-white"
+        onClick={() => setOpenSearch(false)}
+      >
+        x
+      </button>
     </div>
   );
 };

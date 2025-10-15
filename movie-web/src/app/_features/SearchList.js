@@ -41,9 +41,9 @@ export const SearchList = (props) => {
     router.push(`/search-filter/${value}`);
   };
   return (
-    <div className="flex absolute z-10 bg-white  top-20 ">
+    <div className="flex absolute z-10 bg-white top-20 ">
       {value.length > 1 && (
-        <div className="flex  justify-center mt-2  flex-wrap w-[577px] h-[729px]  ">
+        <div className="flex  justify-center   flex-wrap w-[577px] h-[729px] max-sm:w-[400px]">
           {searches.slice(0, 5).map((movie, index) => {
             return (
               <SearchCom
@@ -56,18 +56,15 @@ export const SearchList = (props) => {
               />
             );
           })}
-          <div
-            className="absolute z-10 flex justify-center items-end "
-            onClick={handleSee}
-          >
-            <div className="bg-white w-[577px] h-[10px] p-4">
-              <p className="flex justify-end text-black font-medium text-sm ">
-                See all results for "{value}"
-              </p>
-            </div>
-          </div>
         </div>
       )}
+      <div className="absolute z-10 flex " onClick={handleSee}>
+        <div className="bg-white w-[577px] h-[10px] p-4 max-sm:w-[400px]">
+          <p className="flex justify-end text-black font-medium text-sm ">
+            See all results for "{value}"
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

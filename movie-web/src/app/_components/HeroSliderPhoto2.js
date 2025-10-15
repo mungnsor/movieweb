@@ -38,6 +38,7 @@ export const HeroSliderPhoto2 = (props) => {
           className=" w-[430px] h-[246px] "
           src={`https://image.tmdb.org/t/p/original${img}`}
         ></img>
+
         <div className="flex flex-col justify-center gap-2.5   text-black ">
           <div className="flex justify-between">
             <div className="w-55 flex flex-col">

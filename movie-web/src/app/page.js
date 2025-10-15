@@ -8,7 +8,7 @@ import { HeroSlider } from "./_features/HeroSlider";
 import { HeroSlider2 } from "./_features/HeroSlider2";
 export default function Home() {
   return (
-    <div className="sm:w-[1440px] m-auto">
+    <div>
       <Header />
       <HeroSlider />
       <HeroSlider2 />

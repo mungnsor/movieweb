@@ -36,7 +36,7 @@ export const HeroSliderPhoto = (props) => {
         className=" absolute -z-1 h-full w-full max:sm:w-[375px] max:sm:h-[246px]"
         src={`https://image.tmdb.org/t/p/original${img}`}
       ></img>
-      <div className="flex items-center  justify-between">
+      <div className="flex items-center justify-between">
         <div className="flex items-center ">
           <div className="w-35 justify-end h-20 flex pr-8">
             <button
@@ -66,15 +66,15 @@ export const HeroSliderPhoto = (props) => {
             </button>
           </div>
           {trailers && <Trailer movieId={movieId} />}
-        </div>
-        <div className="w-60 h-20 flex justify-end pr-8">
-          <button
-            onClick={handleNext}
-            className=" light: bg-[#f4f4f5] h-9 w-9 flex items-center
+          <div className="w-60 h-20 flex justify-end pr-8">
+            <button
+              onClick={handleNext}
+              className=" light: bg-[#f4f4f5] h-9 w-9 flex items-center
             justify-center rounded-full "
-          >
-            <NextButtonIcon />
-          </button>
+            >
+              <NextButtonIcon />
+            </button>
+          </div>
         </div>
       </div>
     </div>
