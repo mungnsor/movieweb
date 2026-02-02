@@ -39,7 +39,7 @@ export const Trailer = ({ movieId }) => {
     );
   }
   return (
-    <div className="flex   h-[450px] items-center gap-2  cursor-pointer border justify-center  z-10 border-none absolute max-sm:w-[450px]  max-sm:justify-items-start max-sm:bg-black max-sm:h-[550px]">
+    <div className="flex h-[450px] items-center gap-2  cursor-pointer border justify-center  z-10 border-none absolute max-sm:w-[450px]  max-sm:justify-items-start max-sm:bg-black max-sm:h-[550px] top-0">
       <div className="w-[1080px] h-full bg-gray flex ml-80  max-sm:w-[450px] max-sm:ml-0 max-sm:justify-center max-sm:items-center">
         <iframe
           width="1100"

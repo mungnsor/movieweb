@@ -113,7 +113,7 @@ export default function MovieDetail() {
           {trailer && <Trailer2 movieId={id} />}
         </div>
       </div>
-      <div className="w-full flex justify-center mt-5 max-sm:w-[375px] max-sm:h-[230px]">
+      <div className="w-full flex justify-center mt-5 max-sm:w-[375px] max-sm:h-[360px]">
         <div className="w-[450px] h-[428px] border rounded-lg max-sm:w-[100px] max-sm:h-[148px] sm:hidden ">
           <img
             className="w-full h-full  rounded-lg "
@@ -139,7 +139,7 @@ export default function MovieDetail() {
             </button>
           </div>
           <div className=" flex justify-center mt-3 w-full ">
-            <div className="w-335 h-[48px] items-center ml-10 max-sm:w-[230px] ">
+            <div className="w-335 h-[58px] items-center ml-10 max-sm:w-[230px] ">
               {movie?.overview}
             </div>
           </div>

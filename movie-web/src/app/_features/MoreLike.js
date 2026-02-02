@@ -66,7 +66,7 @@ export const MoreLikeList = () => {
             </Link>
           </div>
           <div className="grid grid-cols-5 w-full mt-2 justify-around gap-3 max-sm:grid-cols-2  items-center">
-            {morelike.slice(0, 5).map((movie, index) => {
+            {morelike.slice(0, 4).map((movie, index) => {
               return (
                 <MovieCard
                   key={index}

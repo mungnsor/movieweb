@@ -33,34 +33,51 @@ export const HeroSliderPhoto2 = (props) => {
   };
   return (
     <div className="min-sm:hidden">
-      <div className=" w-full  m-auto h-[450px] flex flex-col gap-5  items-center">
+      <div className=" w-full  m-auto h-[245px] flex flex-row justify-between gap-5  items-center ">
         <img
-          className=" w-[430px] h-[246px] "
+          className=" w-[430px] h-[246px] absolute -z-1  "
           src={`https://image.tmdb.org/t/p/original${img}`}
         ></img>
-
-        <div className="flex flex-col justify-center gap-2.5   text-black ">
-          <div className="flex justify-between">
-            <div className="w-55 flex flex-col">
-              <span>Now Playing: </span>
-              <span>{name}</span>
-            </div>
-            <div className="flex flex-row">
-              <StarIcon />
-              <p className="text-black"> {rate}/10</p>
-            </div>
-          </div>
-          <div className="w-100 text-black">{overview}</div>
+        <div className="w-25 justify-end h-20 flex pr-8">
           <button
-            className="w-40 light: bg-black rounded-sm h-8 items-center justify-center flex gap-2 mt-4"
-            onClick={handleTrailerClick}
+            onClick={handleBack}
+            className="bg-[#f4f4f5] h-9 w-9 flex items-center justify-center rounded-full  "
           >
-            <DownIcons />
-            <p className=" text-white">Watch Trailer</p>
+            {" "}
+            <BackButtonIcon />
           </button>
         </div>
-        {trailers && <Trailer movieId={movieId} />}
+        <div className="w-60 h-20 flex justify-end pr-8">
+          <button
+            onClick={handleNext}
+            className=" light: bg-[#f4f4f5] h-9 w-9 flex items-center
+            justify-center rounded-full "
+          >
+            <NextButtonIcon />
+          </button>
+        </div>
       </div>
+      <div className="flex flex-col justify-center gap-2.5   text-black ">
+        <div className="flex justify-between">
+          <div className="w-55 flex flex-col">
+            <span>Now Playing: </span>
+            <span>{name}</span>
+          </div>
+          <div className="flex flex-row">
+            <StarIcon />
+            <p className="text-black"> {rate}/10</p>
+          </div>
+        </div>
+        <div className="w-100 text-black">{overview}</div>
+        <button
+          className="w-40 light: bg-black rounded-sm h-8 items-center justify-center flex gap-2 mt-4"
+          onClick={handleTrailerClick}
+        >
+          <DownIcons />
+          <p className=" text-white">Watch Trailer</p>
+        </button>
+      </div>
+      {trailers && <Trailer movieId={movieId} />}
     </div>
   );
 };
